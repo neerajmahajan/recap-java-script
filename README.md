@@ -62,6 +62,11 @@ typeof name;
 
 * === does right comparison. ``` 10 = "10" will return false ```
 
+##### Boolean value : Values of all types has as associated boolean value.
+* If we use non zero value in if condition then it will always return true.. for zero it will return false.
+* If we use non empty string in if condition then it will always return true... otherwise it will return false.
+* null or undefined will also return false.
+
 #### Variable Declaration & Definition
 
 * var variableName; (Declaration)
