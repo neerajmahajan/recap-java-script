@@ -1,4 +1,4 @@
-# recap-java-script
+## recap-java-script https://github.com/getify/You-Dont-Know-JS
 Repository to revise and document  javascript
 
 * Lightweight (easy to implement)
@@ -250,6 +250,16 @@ var person = {
 
 console.log(person.isFromCity("Southampton"));
 ```
+
+### Scopes in Java
+* Dictates where the variable is accessible in the program.
+* Global scope
+* function level scope
+
+
+
+
+
 
 ##### Defining classes using functions
 
