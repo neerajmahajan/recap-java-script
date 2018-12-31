@@ -99,7 +99,20 @@ for (var movie of movies){
 ```
 
 #### Objects
-
-```
-
-```
+* Don't have classes( JavaScript is not class based programming language)
+* Free Form as not bound to classes (properties  or functions can be added to Object on the fly(dynamixally) and even after creating its object)
+* Object Creation
+	*	var myObj = {} // Empty Object
+	*   myObj.name = "neeraj"; // Added property to myObj Object after object creation.
+	*	upfront creating Object
+		```
+			var employee = {
+				"firstName": "John",
+				"lastName" : "Jones",
+				"salary"   : 56600,
+				"vegetarian" : true			
+			}		
+		```
+* Accessing Object property
+	* object.propertyName
+	* if the property doesn't exist for an Object, then undefined value will be returned.
