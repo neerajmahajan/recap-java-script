@@ -155,6 +155,7 @@ for (var movie of movies){
 * return type doesn't need to be specified in the fucntion signature
 * return value can be empty. eg return; if there is no return statement in function, then function returns an undefined value;
 * functions can be passed as an arguments. 
+* functions can have parameter with default values.
 * function declaration can be assigned to a variable.
 
 ```
@@ -164,14 +165,14 @@ for (var movie of movies){
 	functionVariable(); // this will execute the function.
 ```
 
-##### Anonymous function
+###### Anonymous function
 ```
 	var functionVariable = functio(){
 		console.log("Hello");
 	};
 	functionVariable();
 ```
-##### Passing function as arguments
+###### Passing function as arguments
 ```
 var f = function(name){
 	console.log("Hello " + name);
@@ -181,7 +182,47 @@ var executor = function(fn,name){
 	fn(name);
 }
 
-executor(f);
+executor(f,"Neeraj");
 
-``` 
+```
+
+###### Functions in Objects
+
+```
+var person = {
+	"firstName":"Neeraj",
+	"lastName" : "Mahajan"
+	"getFullName" : function() {return person.firstName + person.lastName} // this instruction will be executed when getFullName function is called.
+
+}
+
+// Above implementation is not good
+
+var person = {
+	"firstName":"Neeraj",
+	"lastName" : "Mahajan"
+	"getFullName" : function() {return this.firstName + this.lastName} // this points to the current object.
+
+}
+
+
+var person = {
+	"firstName":"Neeraj",
+	"lastName" : "Mahajan",
+  "address"  : {
+    "houseNo" : 50,
+    "street"  : "Mark Road",
+    "city"    : "Southampton"  
+  },
+  "isFromCity" : function(city){
+    return city === this.address.city;
+  }
+	
+}
+
+console.log(person.isFromCity("Southampton"));
+```
+
+##### Defining classes using functions
+
 
