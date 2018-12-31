@@ -108,7 +108,6 @@ for (var movie of movies){
 }
 
 ```
-
 #### Objects
 * Don't have classes( JavaScript is not class based programming language)
 * Free Form as not bound to classes (properties  or functions can be added to Object on the fly(dynamixally) and even after creating its object)
@@ -129,7 +128,7 @@ for (var movie of movies){
 	* Special cases of  square brackets([]) notation
 		* Property name is a reserver word.
 		* Property name starts with a number. eg myObj["1"];
-		* Property name is dynamic.	(when property name is stored in a variable)
+		* Property name is dynamic.	(when property name is stored in a variable)		
 			```
 			myObj = {
 				"name": "Neeraj",
@@ -140,9 +139,49 @@ for (var movie of movies){
 			}
 			var propertyName = "age";
 			myObj[propertyName] // through variable
-			myObj["age"]	// directly
-			```			
+			myObj["age"]	// directly			
+			```	
 	* object.propertyName
 	* if the property doesn't exist for an Object, then undefined value will be returned.
 * Removing property from an Object
 	* delete object.property eg person.age
+
+#### Functions
+
+* declared with function keyword.
+* can be called with variable number of arguments(less or more than the declared arguments in function)
+* If less function arguments are passed then the missed argument will have undefined value.
+* If more function arguments are passed, then additional arguments will be ignored.
+* return type doesn't need to be specified in the fucntion signature
+* return value can be empty. eg return; if there is no return statement in function, then function returns an undefined value;
+* functions can be passed as an arguments. 
+* function declaration can be assigned to a variable.
+
+```
+	var functionVariable = function doSomething(){
+		console.log("Hello");
+	};
+	functionVariable(); // this will execute the function.
+```
+
+##### Anonymous function
+```
+	var functionVariable = functio(){
+		console.log("Hello");
+	};
+	functionVariable();
+```
+##### Passing function as arguments
+```
+var f = function(name){
+	console.log("Hello " + name);
+}
+
+var executor = function(fn,name){
+	fn(name);
+}
+
+executor(f);
+
+``` 
+
