@@ -378,6 +378,7 @@ innerFn();
 
 ###### setTimeout(fn, milliseconds)
 * This function takes a function and execute it after the passed milliseconds. It is an example function which shows the usage of closures, If the function passed has  used some variables, then it will be remembered in the library of setTimeout which will execute the function.
+* how setTimeout works in a loop ????? TODO
 
 ```
 var a = 10;
@@ -418,6 +419,27 @@ function createPerson(){
 	var person = createPerson();
 	console.log(person.getFirstName());
 }
-```  
+
+We can also create setters and set value for firstName and lastName
+```
+#### Objects and Prototypes
+* Objects are created using functions
+* call function in a constructor mode using **new**
+
+```
+function Employee(firstName,lastName,age){
+	this.firstName = firstName;
+	this.lastName = lastName;
+	this.age = age;
+}
+
+var emp1 =  new Employee("Neeraj","Mahajan",25);
+
+//Above statement will create an object with properties firstName,lastName and age.
+
+
+
+```
+
 
   
