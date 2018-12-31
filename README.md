@@ -186,6 +186,24 @@ executor(f,"Neeraj");
 
 ```
 
+###### Default arguments in functions
+* this
+* arguments
+
+###### Varargs in functions (accessed through implicit ```arguments``` variable)
+* arguments is like an array, but not an array
+
+```
+var add = function () {
+	var i,sum = 0;
+	for(i=0; i<arguments.length;i++){
+		sum += arguments[i];
+	}
+	return sum;
+}
+
+```
+
 ###### Functions in Objects
 
 ```
