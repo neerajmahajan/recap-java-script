@@ -82,16 +82,16 @@ var movies = ['Me Before You',"Marry Poppins Returns", 'A star is born', 'Bohemi
 var myArray =[10,20,30,40];
 ```
 
-####### Accessing Array elements
+###### Accessing Array elements
 *  myArray[index]
 
-####### Adding variable to Array
+###### Adding variable to Array
 * myArray[4] = 50;
 
-#######  Getting length of array
+######  Getting length of array
 * arrayVariable.length
 
-####### Iterating an array and applying function on array values
+###### Iterating an array and applying function on array values
 ```
 movies.forEach(function(movie){
 	console.log(movie);
