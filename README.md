@@ -61,6 +61,7 @@ typeof name;
 * When we use == to compare two values, javascript do type conversion if the two values are not of same type and then does the comparison. ``` 10 == "10" will return true ```
 
 * === does right comparison. ``` 10 = "10" will return false ```
+* in case of object use === to check if both Objects points to same location.
 
 ##### Boolean value : Values of all types has as associated boolean value.
 * If we use non zero value in if condition then it will always return true.. for zero it will return false.
@@ -77,10 +78,20 @@ typeof name;
 #### Arrays
 
 ```
-var movies = ['Me Before You',"Marry Poppins Returns", 'A star is born', 'Bohemian Rhapsody']
+var movies = ['Me Before You',"Marry Poppins Returns", 'A star is born', 'Bohemian Rhapsody'];
+var myArray =[10,20,30,40];
 ```
 
-##### Iterating an array and applying function on array values
+####### Accessing Array elements
+*  myArray[index]
+
+####### Adding variable to Array
+* myArray[4] = 50;
+
+#######  Getting length of array
+* arrayVariable.length
+
+####### Iterating an array and applying function on array values
 ```
 movies.forEach(function(movie){
 	console.log(movie);
@@ -114,5 +125,24 @@ for (var movie of movies){
 			}		
 		```
 * Accessing Object property
+	* can be accessed by either dot (.) notation or square brackets([])
+	* Special cases of  square brackets([]) notation
+		* Property name is a reserver word.
+		* Property name starts with a number. eg myObj["1"];
+		* Property name is dynamic.	(when property name is stored in a variable)
+			```
+			myObj = {
+				"name": "Neeraj",
+				"age" : 23,
+				"objProp": {
+					"innerProp": "Inner Property Value"
+					}			
+			}
+			var propertyName = "age";
+			myObj[propertyName] // through variable
+			myObj["age"]	// directly
+			```			
 	* object.propertyName
 	* if the property doesn't exist for an Object, then undefined value will be returned.
+* Removing property from an Object
+	* delete object.property eg person.age
