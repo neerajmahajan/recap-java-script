@@ -76,6 +76,7 @@ typeof name;
 * At any time of script or program, we can change the variable value with **ANY DATA TYPE** (LOOSE TYPING).
 
 #### Arrays
+* Can have hetrogeneous elements.
 
 ```
 var movies = ['Me Before You',"Marry Poppins Returns", 'A star is born', 'Bohemian Rhapsody'];
@@ -88,11 +89,19 @@ var myArray =[10,20,30,40];
 ###### Adding variable to Array
 * myArray[4] = 50;
 
+###### Array methods 
+* push(60);  // Add element to the last and returns the updated length of the array.
+* pop(); 	 // Removes last element from an array and returns it back.
+* shift()	 // Removes first element from an array and returns it back.
+* unshift(70) // Add element at the start of array and returns the updated length of the array.
+
 ######  Getting length of array
 * arrayVariable.length
 
 ###### Iterating an array and applying function on array values
 ```
+forEach function also take 2 hidden arguments which are **index** and **array** itself.
+
 movies.forEach(function(movie){
 	console.log(movie);
 	}
@@ -157,6 +166,7 @@ for (var movie of movies){
 * functions can be passed as an arguments. 
 * functions can have parameter with default values.
 * function declaration can be assigned to a variable.
+* functions are internally objects.
 
 ```
 	var functionVariable = function doSomething(){
