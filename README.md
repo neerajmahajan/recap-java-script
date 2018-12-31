@@ -251,14 +251,57 @@ var person = {
 console.log(person.isFromCity("Southampton"));
 ```
 
-### Scopes in Java
+#### Scopes in Java
 * Dictates where the variable is accessible in the program.
-* Global scope
-* function level scope
+* Global scope (Best practice is to not use global variable)
+* function level scope (variables created inside function will not be visible outside directly)
+* Following statements will create global scope
+```
+var age = 50;
 
+{
+	var a = 10;
+}
 
+if (true) {
+	var b =20;
+}
+```
+* function f has access to global x variable and will overried the value of x. will print 20 then 10
+```
+var x =20;
 
+function f(){
+  x =10;  // will modify original x variable.
+}
 
+console.log(x);
+f();
+console.log(x);
+```
+* executing anonymous function inline IIFE - immediately invoked function -- wrap function inside () and then call with () as shown below.
+```
+(function (){
+	console.log("hi");
+}
+)();
+```
+
+###### Reading/Writing variables
+* Reading a varibale without declartion will given exception. eg ``` console.log(foo) ```
+* However write to variable will work without variable declaration. eg ``` foo = 10; console.log(10)```
+* If a variable is create var anywhere in the program(even in fucntion) then it will create global scope. Below code will print 100
+```
+	function f(){
+	  z = 100;
+	}
+	f();
+	console.log(z);
+```
+
+###### Global object
+* holds all global variables.
+* depends on the runtime environment (eg **window** will be the global object in case of web browser) 
 
 
 ##### Defining classes using functions
