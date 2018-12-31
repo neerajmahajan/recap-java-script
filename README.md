@@ -2,7 +2,7 @@
 Repository to revise and document  javascript
 
 * Lightweight (easy to implement)
-* Interpreted (Instructions are executed direcly.)
+* Interpreted (Instructions are executed direcly, but it does compiliation just before executing to gather some details)
 * Object Oriented (We can design and write our code in terms of class and Objects)
 * first-class functions (functional programming: functions can be used as value, Functions can be assigned to a variable)
 * scripting language (Instructions are given and executed in linear order, but it can be bundled into a file and executed)
@@ -303,7 +303,10 @@ console.log(x);
 * holds all global variables.
 * depends on the runtime environment (eg **window** will be the global object in case of web browser) 
 
-
-##### Defining classes using functions
-
-
+###### Compilation / Interpretation in javascript
+* compilation happens just before execution.
+* In compilation phase compiler scan all variables and defines thier global and local scope.
+* All variables declared outside functions or varibale declared without keyword **var** inside functions are put into global scope. 
+* Separate local scope is created for each function.
+* no assignment is done in compilation phase.
+* assignment to varibale is done in execution phase.
