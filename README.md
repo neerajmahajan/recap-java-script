@@ -391,4 +391,33 @@ console.log("Above function will be executed after 1 second by some other librar
 
 ```
 
+###### Module Pattern
+* In module pattern we create an object inside an function and return it back from the function.
+* The object we create has mostly functions. 
+* The properties of object are created outside the object, but inside the function which is creating that object. 
+* This approach data hiding. This way we can implement private properties.
+
+```
+function createPerson(){
+	var firstName = "Neeraj";
+	var lastName = "Mahajan";
+	
+	var returnObject = {
+	
+		"getFirstName" : function(){
+			return firstName;
+		},
+		"getLastName"	  : function(){
+			return lastName;
+		}
+		};
+		
+		return returnObject;
+	}
+	
+	var person = createPerson();
+	console.log(person.getFirstName());
+}
+```  
+
   
