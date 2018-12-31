@@ -306,7 +306,89 @@ console.log(x);
 ###### Compilation / Interpretation in javascript
 * compilation happens just before execution.
 * In compilation phase compiler scan all variables and defines thier global and local scope.
-* All variables declared outside functions or varibale declared without keyword **var** inside functions are put into global scope. 
+* All variables declared outside functions are put into global phase by compiler.
+* Varibale declared without keyword **var** inside functions during write operation are put into global scope, but by **interpretor** 
 * Separate local scope is created for each function.
 * no assignment is done in compilation phase.
 * assignment to varibale is done in execution phase.
+* Below code will print value of c as undefined instead of 10, because of compilation and interpretation phase. ** IMPORTANT see b is declare in the inner method scope after the assignment**
+```
+function outer(){
+ var b = 10;
+  	
+  	console.log(b);
+  	function inner(){
+ 	 	var c = b;
+  		console.log(c);
+  		var b = 200;
+  	}
+ }
+ outer();
+```
+* Below code will also print undefined
+```
+console.log(x);
+var x =100;
+```
+
+###### Hoisting
+* moves up the function definition or variable declarations at the top.
+
+```
+Will not work
+
+fnA()
+
+var fnA = function(){
+	console.log("Hello")
+}
+```
+
+```
+Will work because javascript does the hoisting..
+hello();
+function hello(){
+	console.log("Hello")
+}
+```
+
+###### Strict Mode
+* It runs the code in strict mode. In this mode you cannot create a varible name without declaring it with var keyword.
+* To run in strict mode add **"use strict";** at top
+
+#### Closures
+* A closure is a feature in JavaScript where an inner function remember the value of variable in outer function scope or in global scope, even when the inner function is executed out of outer function context. In below code snippet, when innerFn is executed, the outer function scope doesn't exist any more, however innerFn has remembered the value of variable b which was declared in outer function.
+
+```
+var a = 10;
+
+function outer(){
+	var b = 20;
+	var inner = function(){
+		console.log(a);
+		console.log(b);
+	};
+	return inner;
+}
+
+var innerFn = outer();
+innerFn();
+
+```
+
+###### setTimeout(fn, milliseconds)
+* This function takes a function and execute it after the passed milliseconds. It is an example function which shows the usage of closures, If the function passed has  used some variables, then it will be remembered in the library of setTimeout which will execute the function.
+
+```
+var a = 10;
+
+var fn = function(){
+	console.log(a);
+}
+
+setTimeout(fn,1000);
+console.log("Above function will be executed after 1 second by some other library")
+
+```
+
+  
