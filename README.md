@@ -423,7 +423,9 @@ function createPerson(){
 We can also create setters and set value for firstName and lastName
 ```
 #### Objects and Prototypes
-* Objects are created using functions
+* Objects are created using functions or 
+	* var obj = {}
+	* var obj = new Object(); // Object is a global object.
 * call function in a constructor mode using **new**
 * When we call a function with new keyword. It created a **function specific **this** ** Object in function.
 * If we call the function without new, which is meant to run in constructor mode will return undefined and changes inside fucntion will be made to global **this** object, not the local this object.
@@ -497,15 +499,18 @@ preeti.increaseSalary.call(neeraj,500);
 	* function object itself.
 	* it's prototype object.
 	* prototype object can be reffered by prototype property residing on function object.
-* Every Object has a property __proto__ points to the Prototype Object.
+* Every Object has a property ```__proto__``` points to the Prototype Object.
 * when we define a function, it create function object and its prototype object. 
-* When we create multiple objects from function created in above step with new keyword. then every created object will have __proto__ property that points to the prototype object created while method definition.
+* When we create multiple objects from function created in above step with new keyword. then every created object will have ```__proto__``` property that points to the prototype object created while method definition.
 * If we access an property on an object it first check whether that property exist on the object, if NOT, then it goes to its prototype Object and checks the same property exits there or not. If it find the property then it returns the value of that property, otherwise it will return undefined.
 
 * ![](prototype_concept.png)
 
 * We can define funtions on prototype object to avoid duplication of creating multiple objects.
-* prototype object has **constructor** property which points to the function iteslf. Helpful to find the function which has created this Object. eg obj.__proto__.constructor
-
-
-  
+* prototype object has **constructor** property which points to the function iteslf. Helpful to find the function which has created this Object. eg obj.```__proto__```.constructor
+	* Can be used to create a function from property.
+	* It is recommened not to use ``` __proto__``` property
+* Prototype Object is internally created using ** new Object() ** 
+* If we set any property on **Object.prototype** it will be aviable to all objects in java script engine.
+* A .prototype property can be directly called on function object and if we are creating ab object from function the this prototype can be accessed via ```__proto__ ``` .
+* Function is like class and calling function will new is like creating an object. object.__proto isn equal to Function.prototype  
