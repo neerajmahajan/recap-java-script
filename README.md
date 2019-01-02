@@ -504,5 +504,8 @@ preeti.increaseSalary.call(neeraj,500);
 
 * ![](prototype_concept.png)
 
+* We can define funtions on prototype object to avoid duplication of creating multiple objects.
+* prototype object has **constructor** property which points to the function iteslf. Helpful to find the function which has created this Object. eg obj.__proto__.constructor
+
 
   
