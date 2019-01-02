@@ -166,7 +166,7 @@ for (var movie of movies){
 * functions can be passed as an arguments. 
 * functions can have parameter with default values.
 * function declaration can be assigned to a variable.
-* functions are internally objects.
+* functions are internally objects. It internally create two objects(object iteslf and it's prototype accessed by **prototype** property)
 
 ```
 	var functionVariable = function doSomething(){
@@ -490,6 +490,19 @@ preeti.increaseSalary = neeraj.increaseSalary;
 preeti.increaseSalary.call(neeraj,500);
 
 ```
+
+###### Prototype
+* When we call a function in constructor mode, that has another function assigned to a property, then that function object is creates every time the outer function is called. In short function object will be duplicated each time an object is created.
+* When we create a fucntion, it interanlly create two Objects.
+	* function object itself.
+	* it's prototype object.
+	* prototype object can be reffered by prototype property residing on function object.
+* Every Object has a property __proto__ points to the Prototype Object.
+* when we define a function, it create function object and its prototype object. 
+* When we create multiple objects from function created in above step with new keyword. then every created object will have __proto__ property that points to the prototype object created while method definition.
+* If we access an property on an object it first check whether that property exist on the object, if NOT, then it goes to its prototype Object and checks the same property exits there or not. If it find the property then it returns the value of that property, otherwise it will return undefined.
+
+* ![](prototype_concept.png)
 
 
   
