@@ -197,7 +197,7 @@ executor(f,"Neeraj");
 ```
 
 ###### Default arguments in functions
-* this
+* **this**
 * arguments
 
 ###### Varargs in functions (accessed through implicit ```arguments``` variable)
@@ -425,6 +425,8 @@ We can also create setters and set value for firstName and lastName
 #### Objects and Prototypes
 * Objects are created using functions
 * call function in a constructor mode using **new**
+* When we call a function with new keyword. It created a **function specific **this** ** Object in function.
+* If we call the function without new, which is meant to run in constructor mode will return undefined and changes inside fucntion will be made to global **this** object, not the local this object.
 
 ```
 function Employee(firstName,lastName,age){
@@ -437,7 +439,55 @@ var emp1 =  new Employee("Neeraj","Mahajan",25);
 
 //Above statement will create an object with properties firstName,lastName and age.
 
+```
 
+###### Function context
+* the execution context from where the function is called.
+* If the function is called without **new** keyword, it will use **this** from the previous execution context, otherwise it will overide this and create new **this** object.
+
+```
+function foo(){
+	console.log("Hello");
+}
+
+foo(); // This will use global this // this type 1
+
+
+
+var obj = {};
+obj.foo = function(){
+	console.log("Hello");
+}
+
+obj.foo(); // This will use obj this // this type 2.
+
+new foo(); // This will create new this in function foo. // this type 3
+
+foo.call({}); // this type 4 see below example for detail.
+
+```
+
+```
+function Employee(name,age,salary){
+	this.name=name;
+	this.age=age;
+	this.salary=salary;
+	this.increaseSalary = function(increment){
+		this.salary += increment;
+	}
+}
+
+function Hr(name){
+	this.name=name;
+}
+
+var neeraj = new Employee("Neeraj", 25, 100);
+
+var preeti = new Hr("Preeti");
+
+preeti.increaseSalary = neeraj.increaseSalary;
+
+preeti.increaseSalary.call(neeraj,500);
 
 ```
 
