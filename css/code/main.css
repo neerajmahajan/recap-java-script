@@ -11,3 +11,57 @@
 p{
 	text-transform:	upercase;
 }
+
+/* Applying style to multiple elements*/
+p, span, a, li {
+	color:red;
+	font-size:14px;
+	font-weight:bold;
+	font-family: Arial;
+}
+/* Applying style to specific nested elements*/
+
+#main-div #sub-div {
+	color:red;
+}
+
+/* Applying style to only child elements, not to all descendents*/
+
+#main-div > {
+	color:red;
+}
+
+/* Applying style to adjacent elements */
+
+#div h2 + p {
+	color:green;
+}
+
+
+/* All span elements having class attribute */
+span[class]{
+	color:blue;
+}
+div[id]{
+	color:red;
+}
+a[title]{
+	color:yellow;
+}
+a[title="otherSource"]{
+	color:white;
+}
+/* title attribute  value has deck in the space delimited list in a string*/
+a[title~="deck"]{
+	color:white;
+}
+/* title attribute value  ending with pdf*/
+a[title$="pdf"]{
+	color:white;
+}
+/* title attribute value starting with deck*/
+a[title^="deck"]{
+	color:white;
+}
+
+

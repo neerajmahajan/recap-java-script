@@ -31,6 +31,7 @@
 * If selectors are identical, bottom most selector rules.
 * inline style overrides external styles.
 * some elements doesn't take style defined in css for eg 'a' has default style which will not take global style, unless a is overrident in css.
+
 ###### Selector Specificty
 * If a rule is more specific, then that rule wins irrespective of order. order of preference
 	* eg
@@ -40,9 +41,25 @@
 		
 	```
 * Order of preference
-	* id
-	* classes
-	* elements
+	* id (100 points)
+	* classes (10 points)
+	* elements (1 point)
+
+###### Important (No rule can override this, should be used for specific ones... not used much)
+	* eg 
+
+```
+	p{
+		color:red !important;  // this will wins
+	}
+	
+	#main-content p{
+		color:green
+	}
+```
 
 ##### Inheritance 
 * If we apply any style to parent tag, then that style will be applied to all its childs and sub childs.
+
+##### Targeting multiple elements
+* separate elements by ,
