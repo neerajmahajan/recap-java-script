@@ -1,0 +1,11 @@
+#header{
+	color:green;
+}
+
+#header h1{
+	text-decoration: underline;
+}
+
+p{
+	text-transform:	upercase;
+}

@@ -12,12 +12,72 @@
 		<link rel="stylesheet" type="text/css" href="css/main.css"/>
 			
 		<title>My First html page</title>
+		
+		<style>
+		
+			#top p{
+				color:blue;
+			}
+			
+		</style>
+		<script>
+			alert("Hello...")
+		</script>
+		
+		<script src="scripts/main.js"></script>
 	</head>
 
 	<body>
+		<div id="top">
+			<p> Style applied on me </p>
+		</div>
 		<h1>My first html page</h1>
-		<p> Going to rock front end </p>
+		<p style ="color:red;"> Going to <strong>rock</strong> front end </p>
+		<p> Going to <small>rock</small> front end </p>
+		<p> Going to <em>rock</em> front end </p>
+		<p> Going to <mark>rock</mark> front end </p>
+		<p> Going to <sub>rock</sub> front end </p>
+		<p> Going to <sup>rock</sup> front end </p>
+		<p> Going <pre>to 
+				rock 
+					front</pre> end </p>
+		<!-- image path will be relaive , 100% is windows size, set width/hieght in css instead-->			
+		<img src="img/imagePath.jpg" width="100%" alt="image text displayed on browser if point to image"/>
 		
+		<a onclick="alert('link clicked')" href="secondPage.html">this is link text</a>
+		<!-- target="_blank will open the link in new tab" -->
+		<a href="http://google.com" target="_blank">Go to Google</a>
+		<a href="downloads/passport.pdf">Download passport copy</a>
+		<a href="#top">Go to top div element</a>
+		<br>
+		<hr>
+		
+		<ul>
+			<li>One</li>
+			<li>Two</li>
+			<li>Three</li>
+		</ul>
+		
+		<ol>
+			<li>One</li>
+			<li>Two</li>
+			<li>Three</li>
+		</ol>
+		
+		<dl>		
+			<dt>Ordered List</dt>
+			<dd>it is ordered list</dd>
+		
+			<dt>Un Ordered List</dt>
+			<dd>it is unordered list</dd>		
+		</dl>
+		
+		<h1>Hello I am heading</h1>
+		
+		<script>
+			alert("Hello...at end")
+		</script>
+		  
 	</body>
 	
 </html>

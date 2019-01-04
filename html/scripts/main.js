@@ -1,0 +1,5 @@
+/**
+ * 
+ */
+
+alert("from outside file");
