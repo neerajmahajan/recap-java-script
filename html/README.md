@@ -40,3 +40,136 @@
 
 https://www.html5rocks.com/en/tutorials/
 https://docs.webplatform.org/wiki/html
+
+#### FORMS
+
+* placeholder
+* label for
+* required
+* email
+* maxlength
+
+```
+<form action="" method="post"> // action specifies where form info to be submitted. default is same page
+	<input type="text" id="firstName" name="firstName"> // name goes to server as key
+	
+	<input type="text" id="userName" name="userName" placeholder="Default User Name"> // Greyed value to help user.
+	
+	<label for="firstName">FirstName</label> // value in for is mapped to id
+	 
+	<br>
+	
+	<input type="text" name="lastName" value="Mahajan" required> // required attribute make it mandatory to have that field, otherwise on submission browser will give error
+	
+	<input type="email" name="email"> // email is HTML5 type, the input text is validate on submission to have an email format.
+	
+	<input type="submit" name="Click Me to send data to server">
+	
+	<textarea id="message" rows="4" cols="40" maxlength=400> // maxlength is HTML5 tp define max length of textarea. you can't type more that the defined length.
+	
+	
+</form>
+
+```
+
+
+```
+<form action="" method="post"> 
+
+	<input type="color> name="color" > // HTML5 Given user input to select color from color picker
+	
+	<input type="date> name="birthDate" > // HTML5 Given user input to select date from date picker
+	
+	<input type="number> name="number" min="10" max="20"> // HTML5 for numeric value
+	
+	<input type="url" name="homePageUrl" > // HTML5 for url type text
+	
+	<input type="file" name="cv" > // For uploading files
+	
+	<input type="range" name="range" min="10" max="50"> eg price range
+	
+	<input type="datetime-local" name="transactionTime" > // for datetime picker
+	
+	<input type="checkbox" name="vegOptions" value="Rice" checked> // checked make it checked by default // if not checked then will not passed to form data.
+	
+	<input type="radio" name"gender" value="Male">
+	<input type="radio" name"gender" value="Female">
+	
+	
+</form>
+
+```
+
+```
+<form> 
+
+	<select name="host_type">		// Shows a comboxox
+		<option value="aws">AWS</option>
+		<option value="azure" selected>AWS</option> 	// selected make it default selected in the combobox
+	</select>
+	
+	<input type="password" name="pwd">	
+	
+</form>
+
+```
+
+```
+<form> 
+
+	<fieldset>
+		<legend>Required Information<legend> // fieldset Label
+		
+		<input type="text" id="skinColor" name="skinColor" list="listBelow" > // HTML5 list attribute It is like entering address from pre-defined list of addresses. you just enter some text, it will show available options.
+		<datalist id="listBelow" >
+			<option>White</option>
+			<option>Brown</option>
+			<option>Black</option>			
+		</datalist>			
+		
+	</fieldset>
+	
+</form>
+
+```
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

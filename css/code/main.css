@@ -64,4 +64,12 @@ a[title^="deck"]{
 	color:white;
 }
 
+/* Pseudo Selector . below selector will change the colour of link when mouse cursor is hover over it 19*/
+a:hover{
+	color:red;
+}
+
+#main-content:hover{
+	background: red;
+}
 

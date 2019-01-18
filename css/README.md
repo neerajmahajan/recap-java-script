@@ -63,3 +63,6 @@
 
 ##### Targeting multiple elements
 * separate elements by ,
+
+##### Pseudo Selectors
+
